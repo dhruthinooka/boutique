@@ -8,8 +8,8 @@
 <template>
   <div class="app-container">
     <TheHeader class="header" />
-    <TheFooter class="footer b2" />
-<!--    <Shop class="shop b3" />-->
+    <TheFooter class="footer b4" />
+    <Shop class="shop" />
 <!--    <Cart class="cart b4" />-->
   </div>
 </template>
