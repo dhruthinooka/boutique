@@ -10,7 +10,7 @@
     <TheHeader class="header" />
     <TheFooter class="footer b4" />
     <Shop class="shop" />
-<!--    <Cart class="cart b4" />-->
+    <Cart class="cart b4" />
   </div>
 </template>
 
@@ -36,6 +36,8 @@
 
 .cart {
   grid-area: cart;
+  border-left: var(--border);
+  background-color: var(--gray-1);
 }
 
 .footer {
