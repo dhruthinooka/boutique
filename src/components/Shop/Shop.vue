@@ -1,10 +1,11 @@
 <script setup lang="ts">
 
+import ShopProductList from '@/components/Shop/ShopProductList.vue'
 </script>
 
 <template>
   <div>
-    <h1>Shop</h1>
+    <ShopProductList />
   </div>
 </template>
 
