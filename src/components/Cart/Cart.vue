@@ -4,7 +4,7 @@ import CartProductList from '@/components/Cart/CartProductList.vue'
 </script>
 
 <template>
-  <div class="p-20">
+  <div>
     <h2 class="mb-10">Cart</h2>
     <CartProductList />
   </div>

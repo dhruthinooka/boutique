@@ -1,18 +1,16 @@
 <script setup lang="ts">
 
 import ShopProduct from '@/components/Shop/ShopProduct.vue'
+import type { ProductInterface } from '@/interfaces/product.interface.ts'
+
+defineProps<{
+  products: ProductInterface[]
+}>()
 </script>
 
 <template>
   <div class="grid p-20">
-    <ShopProduct />
-    <ShopProduct />
-    <ShopProduct />
-    <ShopProduct />
-    <ShopProduct />
-    <ShopProduct />
-    <ShopProduct />
-    <ShopProduct />
+    <ShopProduct v-for="product of products" :product="product" />
 
   </div>
 </template>
