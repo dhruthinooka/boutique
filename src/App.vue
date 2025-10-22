@@ -6,6 +6,7 @@
   import data from './data/product';
   import { reactive } from 'vue'
   import type { ProductInterface } from './interfaces/product.interface';
+  import CartProduct from '@/components/Cart/CartProduct.vue'
 
   const state = reactive<{
     products: ProductInterface[],
@@ -22,6 +23,10 @@
     }
   }
 
+  function removeProductFromCart(productId: number): void {
+    state.cart = state.cart.filter(product => product.id !== productId);
+  }
+
 </script>
 
 <template>
@@ -29,7 +34,8 @@
     <TheHeader class="header" />
     <TheFooter class="footer b4" />
     <Shop :products="state.products" @add-product-to-cart="addProductToCart" class="shop" />
-    <Cart class="cart b4" />
+    <Cart :cart="state.cart" class="cart b4"
+          @remove-product-from-cart="removeProductFromCart"/>
   </div>
 </template>
 

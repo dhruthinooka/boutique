@@ -1,12 +1,24 @@
 <script setup lang="ts">
 
 import CartProductList from '@/components/Cart/CartProductList.vue'
+import type { ProductInterface } from '@/interfaces/product.interface.ts'
+import CartProduct from '@/components/Cart/CartProduct.vue'
+
+defineProps<{
+  cart: ProductInterface[]
+}>()
+
+const emit = defineEmits<{
+  (e: 'removeProductFromCart', productId: number): void
+}>()
+
 </script>
 
 <template>
   <div>
     <h2 class="mb-10">Cart</h2>
-    <CartProductList />
+    <CartProductList :cart="cart"
+                     @remove-product-from-cart="emit('removeProductFromCart', $event)"/>
   </div>
 </template>
 
